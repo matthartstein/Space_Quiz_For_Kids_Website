@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Matthew Hartstein's Page</title>
+
+<script type="text/javascript">
+
+function updateQuestionStatus(elId, isCorrect) {
+  document.getElementById(elId).innerHTML = isCorrect ? "CORRECT" : "INCORRECT";
+}
+
+function resetAll() {
+  document.getElementById("question1_status").innerHTML = "";
+  document.getElementById("question2_status").innerHTML = "";
+  document.getElementById("question3_status").innerHTML = "";
+}
+
+</script>
+
+<style type="text/css">
+
+.clickCursor {
+  cursor: pointer;
+}
+
+</style>
+</head>
+<body bgcolor ="gray">
+
+<h1>Matthew Hartstein's Page</h1>
+<p>This webpage consists of a quiz composed of three multiple choice questions that involve 
+   identifying planets belonging to our solar system. More information about our solar 
+   system can be found below:</p>
+
+<a href="http://www.planetsforkids.org/" target="_blank">More Information</a>
+
+<p>1.) What planet do we currently live on?</p>
+<img src="earth.png" width="250" height="250" alt="Earth" class="clickCursor" onclick="updateQuestionStatus('question1_status', true)" />
+<img src="mars.jpg" width="250" height="250" alt="Mars" class="clickCursor" onclick="updateQuestionStatus('question1_status', false)" />
+<img src="mercury.png" width="250" height="250" alt="Mercury" class="clickCursor" onclick="updateQuestionStatus('question1_status', false)" />
+<p id="question1_status"></p><br/>
+
+<p>2.) What planet is known for its massive rings?</p>
+<p class="clickCursor" onclick="updateQuestionStatus('question2_status', false)">A.) Venus</p>
+<p class="clickCursor" onclick="updateQuestionStatus('question2_status', false)">B.) Jupiter</p>
+<p class="clickCursor" onclick="updateQuestionStatus('question2_status', true)">C.) Saturn</p>
+<p id="question2_status"></p>
+<br />
+
+<p>3.) What planet is the closest to the sun?<p/>
+<p class="clickCursor" onclick="updateQuestionStatus('question3_status', true)">A.) Mercury</p>
+<p class="clickCursor" onclick="updateQuestionStatus('question3_status', false)">B.) Uranus</p>
+<p class="clickCursor" onclick="updateQuestionStatus('question3_status', false)">C.) Mars</p>
+<p id="question3_status"></p>
+<br />
+
+<button type="button" onclick='resetAll()'>Reset</button>
+
+</body>
+</html>
